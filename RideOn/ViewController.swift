@@ -8,8 +8,9 @@
 
 import UIKit
 import GoogleMaps
+import MapKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UISearchBarDelegate {
 
     var directionsURL = NSURL(string: "")
     
@@ -17,21 +18,23 @@ class ViewController: UIViewController {
     @IBOutlet weak var endField: UITextField!
     @IBOutlet weak var arrivalField: UITextField!
     @IBOutlet weak var alertField: UITextField!
-    
+
     @IBAction func queryGoogle(sender: AnyObject) {
         formatRequestUrl()
         getDirectionDataFromAPIWithSuccess{ (directionsData) -> Void in
             let json = JSON(data: directionsData)
-            var place1 = json["geocoded_waypoints"]
+            let place1 = json["routes"]
             print(place1)
         }
-
+    }
+    
+    @IBAction func enterStartLocation(sender: AnyObject) {
     }
     
     func formatRequestUrl() {
         if let start = startField?.text, let end = endField?.text {
-            var newStart = start.stringByReplacingOccurrencesOfString(" ", withString: "+")
-            var newEnd = end.stringByReplacingOccurrencesOfString(" ", withString: "+")
+            let newStart = start.stringByReplacingOccurrencesOfString(" ", withString: "+")
+            let newEnd = end.stringByReplacingOccurrencesOfString(" ", withString: "+")
             let link = "https://maps.googleapis.com/maps/api/directions/json?origin=\(newStart)&destination=\(newEnd)&mode=transit&key=AIzaSyAuIqvOjVysxuFCUGmcAtCUM14xV5SZB7U"
             directionsURL = NSURL(string: link)
             print(directionsURL)
@@ -56,7 +59,7 @@ class ViewController: UIViewController {
                 completion(data: nil, error: responseError)
             } else if let httpResponse = response as? NSHTTPURLResponse {
                 if httpResponse.statusCode != 200 {
-                    var statusError = NSError(domain:"google.com", code:httpResponse.statusCode, userInfo:[NSLocalizedDescriptionKey : "HTTP status code has unexpected value."])
+                    let statusError = NSError(domain:"google.com", code:httpResponse.statusCode, userInfo:[NSLocalizedDescriptionKey : "HTTP status code has unexpected value."])
                     completion(data: nil, error: statusError)
                 } else {
                     completion(data: data, error: nil)
