@@ -8,14 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		0B814EDECAE65D22A2629C88 /* Pods_RideOnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A795871822FACE0FE847F074 /* Pods_RideOnTests.framework */; };
-		47F667A3448F36D7EDCC7565 /* Pods_RideOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7206FF3C07986A0980156B11 /* Pods_RideOn.framework */; };
 		4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */; };
 		4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D56D1D85F62D00D9AA9C /* ViewController.swift */; };
 		4B51D5711D85F62D00D9AA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B51D56F1D85F62D00D9AA9C /* Main.storyboard */; };
 		4B51D5731D85F62D00D9AA9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B51D5721D85F62D00D9AA9C /* Assets.xcassets */; };
 		4B51D5811D85F62D00D9AA9C /* RideOnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D5801D85F62D00D9AA9C /* RideOnTests.swift */; };
 		4B51D58C1D85F62D00D9AA9C /* RideOnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D58B1D85F62D00D9AA9C /* RideOnUITests.swift */; };
-		4B55D2301D88B28400D4DCDC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D22F1D88B28400D4DCDC /* SwiftyJSON.swift */; };
 		4BAD13C51D93067200A73555 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD13C41D93067200A73555 /* Location.swift */; };
 		4BC32C881D92C880001E9753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC32C861D92C880001E9753 /* LaunchScreen.storyboard */; };
 		4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */; };
@@ -57,7 +55,6 @@
 		4B51D58D1D85F62D00D9AA9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B55D2281D888B2100D4DCDC /* RideOn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RideOn-Bridging-Header.h"; sourceTree = "<group>"; };
 		4B55D22D1D88B14A00D4DCDC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		4B55D22F1D88B28400D4DCDC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		4BAD13C41D93067200A73555 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4BC32C871D92C880001E9753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStatusViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +75,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F667A3448F36D7EDCC7565 /* Pods_RideOn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +123,6 @@
 		4B51D56A1D85F62D00D9AA9C /* RideOn */ = {
 			isa = PBXGroup;
 			children = (
-				4B55D22F1D88B28400D4DCDC /* SwiftyJSON.swift */,
 				4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */,
 				4B51D56D1D85F62D00D9AA9C /* ViewController.swift */,
 				4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */,
@@ -191,12 +186,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B51D5901D85F62D00D9AA9C /* Build configuration list for PBXNativeTarget "RideOn" */;
 			buildPhases = (
-				9B3321EB872729E0BF9B8332 /* [CP] Check Pods Manifest.lock */,
 				4B51D5641D85F62D00D9AA9C /* Sources */,
 				4B51D5651D85F62D00D9AA9C /* Frameworks */,
 				4B51D5661D85F62D00D9AA9C /* Resources */,
-				421822D4690AEF35287E2135 /* [CP] Embed Pods Frameworks */,
-				EC868639DC08CFA89588213E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -370,21 +362,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOnTests/Pods-RideOnTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		421822D4690AEF35287E2135 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOn/Pods-RideOn-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8277A672D8D9E57FBD689009 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -415,36 +392,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOnUITests/Pods-RideOnUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9B3321EB872729E0BF9B8332 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EC868639DC08CFA89588213E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOn/Pods-RideOn-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -454,7 +401,6 @@
 			files = (
 				8E68DA811D9189A0004C80BD /* CalendarViewController.swift in Sources */,
 				4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */,
-				4B55D2301D88B28400D4DCDC /* SwiftyJSON.swift in Sources */,
 				4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */,
 				4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */,
 				8E68DA831D918F04004C80BD /* DestinationViewController.swift in Sources */,

@@ -7,19 +7,13 @@
 //
 
 import UIKit
-import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    let googleMapsApiKey = "AIzaSyAuIqvOjVysxuFCUGmcAtCUM14xV5SZB7U"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        // Google Maps API
-        GMSServices.provideAPIKey(googleMapsApiKey)
-//        GMSPlacesClient.provideAPIKey(googleMapsApiKey)
         
         return true
     }
