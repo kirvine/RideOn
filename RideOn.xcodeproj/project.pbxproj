@@ -15,7 +15,6 @@
 		4B51D5731D85F62D00D9AA9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4B51D5721D85F62D00D9AA9C /* Assets.xcassets */; };
 		4B51D5811D85F62D00D9AA9C /* RideOnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D5801D85F62D00D9AA9C /* RideOnTests.swift */; };
 		4B51D58C1D85F62D00D9AA9C /* RideOnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D58B1D85F62D00D9AA9C /* RideOnUITests.swift */; };
-		4B55D2301D88B28400D4DCDC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B55D22F1D88B28400D4DCDC /* SwiftyJSON.swift */; };
 		4BAD13C51D93067200A73555 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD13C41D93067200A73555 /* Location.swift */; };
 		4BC32C881D92C880001E9753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC32C861D92C880001E9753 /* LaunchScreen.storyboard */; };
 		4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */; };
@@ -56,8 +55,6 @@
 		4B51D58B1D85F62D00D9AA9C /* RideOnUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideOnUITests.swift; sourceTree = "<group>"; };
 		4B51D58D1D85F62D00D9AA9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B55D2281D888B2100D4DCDC /* RideOn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RideOn-Bridging-Header.h"; sourceTree = "<group>"; };
-		4B55D22D1D88B14A00D4DCDC /* SwiftyJSON.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftyJSON.framework; path = "Pods/../build/Debug-iphoneos/SwiftyJSON/SwiftyJSON.framework"; sourceTree = "<group>"; };
-		4B55D22F1D88B28400D4DCDC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		4BAD13C41D93067200A73555 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		4BC32C871D92C880001E9753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStatusViewController.swift; sourceTree = "<group>"; };
@@ -127,7 +124,6 @@
 		4B51D56A1D85F62D00D9AA9C /* RideOn */ = {
 			isa = PBXGroup;
 			children = (
-				4B55D22F1D88B28400D4DCDC /* SwiftyJSON.swift */,
 				4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */,
 				4B51D56D1D85F62D00D9AA9C /* ViewController.swift */,
 				4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */,
@@ -176,7 +172,6 @@
 		D3B897B74704BC0E3A0CC264 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4B55D22D1D88B14A00D4DCDC /* SwiftyJSON.framework */,
 				7206FF3C07986A0980156B11 /* Pods_RideOn.framework */,
 				A795871822FACE0FE847F074 /* Pods_RideOnTests.framework */,
 				9A05CC86B5A52D0D4677973F /* Pods_RideOnUITests.framework */,
@@ -454,7 +449,6 @@
 			files = (
 				8E68DA811D9189A0004C80BD /* CalendarViewController.swift in Sources */,
 				4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */,
-				4B55D2301D88B28400D4DCDC /* SwiftyJSON.swift in Sources */,
 				4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */,
 				4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */,
 				8E68DA831D918F04004C80BD /* DestinationViewController.swift in Sources */,

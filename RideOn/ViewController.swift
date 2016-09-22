@@ -19,64 +19,12 @@ class ViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var arrivalField: UITextField!
     @IBOutlet weak var alertField: UITextField!
 
-    @IBAction func queryGoogle(sender: AnyObject) {
-        formatRequestUrl()
-        getDirectionDataFromAPIWithSuccess{ (directionsData) -> Void in
-            let json = JSON(data: directionsData)
-            let place1 = json["routes"]
-            print(place1)
-        }
-    }
-    
-    @IBAction func enterStartLocation(sender: AnyObject) {
-    }
-    
-    func formatRequestUrl() {
-        if let start = startField?.text, let end = endField?.text {
-            let newStart = start.stringByReplacingOccurrencesOfString(" ", withString: "+")
-            let newEnd = end.stringByReplacingOccurrencesOfString(" ", withString: "+")
-            let link = "https://maps.googleapis.com/maps/api/directions/json?origin=\(newStart)&destination=\(newEnd)&mode=transit&key=AIzaSyAuIqvOjVysxuFCUGmcAtCUM14xV5SZB7U"
-            directionsURL = NSURL(string: link)
-            print(directionsURL)
-        
-        } else {
-            let formError = UIAlertController(title: "Error", message:
-                "Please enter a start and end location.", preferredStyle: UIAlertControllerStyle.Alert)
-            formError.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-            
-            self.presentViewController(formError, animated: true, completion: nil)
-        }
-
-    }
-    
-    func loadDataFromURL(url: NSURL, completion:(data: NSData?, error: NSError?) -> Void) {
-        
-        let session = NSURLSession.sharedSession()
-        
-        let downloadDataTask = session.dataTaskWithURL(url, completionHandler: { (data: NSData?, response:NSURLResponse?, error: NSError?) -> Void in
-            
-            if let responseError = error {
-                completion(data: nil, error: responseError)
-            } else if let httpResponse = response as? NSHTTPURLResponse {
-                if httpResponse.statusCode != 200 {
-                    let statusError = NSError(domain:"google.com", code:httpResponse.statusCode, userInfo:[NSLocalizedDescriptionKey : "HTTP status code has unexpected value."])
-                    completion(data: nil, error: statusError)
-                } else {
-                    completion(data: data, error: nil)
-                }
-            }
-        })
-        
-        downloadDataTask.resume()
-
-    }
-    
-    func getDirectionDataFromAPIWithSuccess(success: ((directionsData: NSData!) -> Void)) {
-        loadDataFromURL(directionsURL!, completion:{(data, error) -> Void in
-            if let data = data {
-                success(directionsData: data)
-            }
-        })
+    @IBAction func getDirections(sender: AnyObject) {
+        let request = MKDirectionsRequest()
+        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.444284, longitude: -79.929416), addressDictionary: nil))
+        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507), addressDictionary: nil))
+        request.requestsAlternateRoutes = true
+        request.transportType = MKDirectionsTransportType.Transit
     }
 
     
