@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B814EDECAE65D22A2629C88 /* Pods_RideOnTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A795871822FACE0FE847F074 /* Pods_RideOnTests.framework */; };
-		47F667A3448F36D7EDCC7565 /* Pods_RideOn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7206FF3C07986A0980156B11 /* Pods_RideOn.framework */; };
 		4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */; };
 		4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D56D1D85F62D00D9AA9C /* ViewController.swift */; };
 		4B51D5711D85F62D00D9AA9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4B51D56F1D85F62D00D9AA9C /* Main.storyboard */; };
@@ -75,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				47F667A3448F36D7EDCC7565 /* Pods_RideOn.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,12 +184,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4B51D5901D85F62D00D9AA9C /* Build configuration list for PBXNativeTarget "RideOn" */;
 			buildPhases = (
-				9B3321EB872729E0BF9B8332 /* [CP] Check Pods Manifest.lock */,
 				4B51D5641D85F62D00D9AA9C /* Sources */,
 				4B51D5651D85F62D00D9AA9C /* Frameworks */,
 				4B51D5661D85F62D00D9AA9C /* Resources */,
-				421822D4690AEF35287E2135 /* [CP] Embed Pods Frameworks */,
-				EC868639DC08CFA89588213E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -365,21 +360,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOnTests/Pods-RideOnTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		421822D4690AEF35287E2135 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOn/Pods-RideOn-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		8277A672D8D9E57FBD689009 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,36 +388,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOnUITests/Pods-RideOnUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9B3321EB872729E0BF9B8332 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EC868639DC08CFA89588213E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RideOn/Pods-RideOn-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
