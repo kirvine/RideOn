@@ -15,6 +15,7 @@
 		4B51D5811D85F62D00D9AA9C /* RideOnTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D5801D85F62D00D9AA9C /* RideOnTests.swift */; };
 		4B51D58C1D85F62D00D9AA9C /* RideOnUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B51D58B1D85F62D00D9AA9C /* RideOnUITests.swift */; };
 		4BAD13C51D93067200A73555 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BAD13C41D93067200A73555 /* Location.swift */; };
+		4BBE7EC71D945FB100DA4EBC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */; };
 		4BC32C881D92C880001E9753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC32C861D92C880001E9753 /* LaunchScreen.storyboard */; };
 		4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */; };
 		8E20BF925146DD0896364689 /* Pods_RideOnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A05CC86B5A52D0D4677973F /* Pods_RideOnUITests.framework */; };
@@ -55,6 +56,7 @@
 		4B51D58D1D85F62D00D9AA9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4B55D2281D888B2100D4DCDC /* RideOn-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RideOn-Bridging-Header.h"; sourceTree = "<group>"; };
 		4BAD13C41D93067200A73555 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4BC32C871D92C880001E9753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStatusViewController.swift; sourceTree = "<group>"; };
 		4FD441CD8F66813AF281B263 /* Pods-RideOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideOn/Pods-RideOn.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 		4B51D56A1D85F62D00D9AA9C /* RideOn */ = {
 			isa = PBXGroup;
 			children = (
+				4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */,
 				4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */,
 				4B51D56D1D85F62D00D9AA9C /* ViewController.swift */,
 				4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */,
@@ -402,6 +405,7 @@
 				4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */,
 				4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */,
 				8E68DA831D918F04004C80BD /* DestinationViewController.swift in Sources */,
+				4BBE7EC71D945FB100DA4EBC /* SwiftyJSON.swift in Sources */,
 				4BAD13C51D93067200A73555 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
