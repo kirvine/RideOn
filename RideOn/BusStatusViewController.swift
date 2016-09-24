@@ -12,7 +12,7 @@ import MapKit
 class BusStatusViewController: UIViewController, MKMapViewDelegate {
 
     var userLocation = Location()
-    let regionRadius: CLLocationDistance = 500
+    let regionRadius: CLLocationDistance = 1000
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -29,55 +29,47 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        mapView.delegate = self
+        
+        // get current location
         userLocation.getCurrentLocation()
         let initialLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
         centerMapOnLocation(initialLocation)
         
+        // place pins of start and end locations
+        let startLocation = CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507)
+        let endLocation = CLLocationCoordinate2D(latitude: 40.444284, longitude: -79.929416)
         
-        // 1.
-        mapView.delegate = self
+        let startPlacemark = MKPlacemark(coordinate: startLocation, addressDictionary: nil)
+        let endPlacemark = MKPlacemark(coordinate: endLocation, addressDictionary: nil)
         
-        // 2.
-        let sourceLocation = CLLocationCoordinate2D(latitude: 40.444284, longitude: -79.929416)
-        let destinationLocation = CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507)
+        let startMapItem = MKMapItem(placemark: startPlacemark)
+        let endMapItem = MKMapItem(placemark: endPlacemark)
         
-        // 3.
-        let sourcePlacemark = MKPlacemark(coordinate: sourceLocation, addressDictionary: nil)
-        let destinationPlacemark = MKPlacemark(coordinate: destinationLocation, addressDictionary: nil)
+        // create annotations
+        let startAnnotation = MKPointAnnotation()
+        startAnnotation.title = "Start"
+        let endAnnotation = MKPointAnnotation()
+        endAnnotation.title = "End"
         
-        // 4.
-        let sourceMapItem = MKMapItem(placemark: sourcePlacemark)
-        let destinationMapItem = MKMapItem(placemark: destinationPlacemark)
-        
-        // 5.
-        let sourceAnnotation = MKPointAnnotation()
-        sourceAnnotation.title = "Start"
-        
-        if let location = sourcePlacemark.location {
-            sourceAnnotation.coordinate = location.coordinate
+        if let location = startPlacemark.location {
+            startAnnotation.coordinate = location.coordinate
+        }
+    
+        if let location = endPlacemark.location {
+            endAnnotation.coordinate = location.coordinate
         }
         
+        self.mapView.showAnnotations([endAnnotation, startAnnotation], animated: true )
         
-        let destinationAnnotation = MKPointAnnotation()
-        destinationAnnotation.title = "End"
-        
-        if let location = destinationPlacemark.location {
-            destinationAnnotation.coordinate = location.coordinate
-        }
-        
-        // 6.
-        self.mapView.showAnnotations([sourceAnnotation,destinationAnnotation], animated: true )
-        
-        // 7.
+        // request directions
         let directionRequest = MKDirectionsRequest()
-        directionRequest.source = sourceMapItem
-        directionRequest.destination = destinationMapItem
+        directionRequest.source = startMapItem
+        directionRequest.destination = endMapItem
         directionRequest.transportType = .Automobile
         
         // Calculate the direction
         let directions = MKDirections(request: directionRequest)
-        
-        // 8.
         directions.calculateDirectionsWithCompletionHandler {
             (response, error) -> Void in
             
@@ -89,6 +81,7 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
                 return
             }
             
+            // establish routes
             let route = response.routes[0]
             self.mapView.addOverlay((route.polyline), level: MKOverlayLevel.AboveRoads)
             
@@ -96,31 +89,11 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
             self.mapView.setRegion(MKCoordinateRegionForMapRect(rect), animated: true)
         }
     }
-    
-//        // directions request
-//        let request = MKDirectionsRequest()
-//        request.source = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.444284, longitude: -79.929416), addressDictionary: nil))
-//        request.destination = MKMapItem(placemark: MKPlacemark(coordinate: CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507), addressDictionary: nil))
-//        request.requestsAlternateRoutes = false
-//        request.transportType = MKDirectionsTransportType.Transit
-//        
-//        // draw direction route
-//        let directions = MKDirections(request: request)
-//        directions.calculateDirectionsWithCompletionHandler({ [unowned self] response, error in
-//            guard let unwrappedResponse = response else { return }
-//            
-//            for route in unwrappedResponse.routes {
-//                self.mapView.addOverlay(route.polyline, level: MKOverlayLevel.AboveRoads)
-//                self.mapView.setVisibleMapRect(route.polyline.boundingMapRect, animated: true)
-//            }
-//        }
-//        )
-//        
-//    }
 
+    
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         let renderer = MKPolylineRenderer(overlay: overlay)
-        renderer.strokeColor = UIColor.blueColor()
+        renderer.strokeColor = UIColor(red: 0.3098, green: 0.6784, blue: 0.9882, alpha: 1.0)
         renderer.lineWidth = 4.0
     
         return renderer
