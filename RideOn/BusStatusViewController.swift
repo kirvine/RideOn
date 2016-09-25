@@ -39,18 +39,24 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
         // place pins of start and end locations
         let startLocation = CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507)
         let endLocation = CLLocationCoordinate2D(latitude: 40.444284, longitude: -79.929416)
-        
+        let busLocation = CLLocationCoordinate2D(latitude: MyVariables.lat, longitude: MyVariables.lon)
+
         let startPlacemark = MKPlacemark(coordinate: startLocation, addressDictionary: nil)
         let endPlacemark = MKPlacemark(coordinate: endLocation, addressDictionary: nil)
-        
+        let busPlacemark = MKPlacemark(coordinate: busLocation, addressDictionary: nil)
+
         let startMapItem = MKMapItem(placemark: startPlacemark)
         let endMapItem = MKMapItem(placemark: endPlacemark)
+        let busMapItem = MKMapItem(placemark: busPlacemark)
+
         
         // create annotations
         let startAnnotation = MKPointAnnotation()
         startAnnotation.title = "Start"
         let endAnnotation = MKPointAnnotation()
         endAnnotation.title = "End"
+        let busAnnotation = MKPointAnnotation()
+        busAnnotation.title = "Bus"
         
         if let location = startPlacemark.location {
             startAnnotation.coordinate = location.coordinate
@@ -59,8 +65,9 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
         if let location = endPlacemark.location {
             endAnnotation.coordinate = location.coordinate
         }
+
         
-        self.mapView.showAnnotations([endAnnotation, startAnnotation], animated: true )
+        self.mapView.showAnnotations([endAnnotation, startAnnotation, busAnnotation], animated: true )
         
         // request directions
         let directionRequest = MKDirectionsRequest()
