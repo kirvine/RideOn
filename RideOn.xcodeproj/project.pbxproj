@@ -18,8 +18,9 @@
 		4BBE7EC71D945FB100DA4EBC /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */; };
 		4BC32C881D92C880001E9753 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4BC32C861D92C880001E9753 /* LaunchScreen.storyboard */; };
 		4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */; };
+		4BFB88D61D9842F1003D62AE /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB88D51D9842F1003D62AE /* DataManager.swift */; };
+		4BFB88DA1D984759003D62AE /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BFB88D91D984759003D62AE /* Timer.swift */; };
 		8E20BF925146DD0896364689 /* Pods_RideOnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A05CC86B5A52D0D4677973F /* Pods_RideOnUITests.framework */; };
-		8E68DA811D9189A0004C80BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E68DA801D9189A0004C80BD /* CalendarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,10 +59,11 @@
 		4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		4BC32C871D92C880001E9753 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BusStatusViewController.swift; sourceTree = "<group>"; };
+		4BFB88D51D9842F1003D62AE /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		4BFB88D91D984759003D62AE /* Timer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
 		4FD441CD8F66813AF281B263 /* Pods-RideOn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideOn.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideOn/Pods-RideOn.release.xcconfig"; sourceTree = "<group>"; };
 		592CB6AEBE1220DCE76EFD3A /* Pods-RideOnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideOnUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideOnUITests/Pods-RideOnUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7206FF3C07986A0980156B11 /* Pods_RideOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8E68DA801D9189A0004C80BD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		950D0FD602C5CABD5FD5A75C /* Pods-RideOnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideOnTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideOnTests/Pods-RideOnTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A05CC86B5A52D0D4677973F /* Pods_RideOnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideOnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A795871822FACE0FE847F074 /* Pods_RideOnTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideOnTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,16 +124,12 @@
 		4B51D56A1D85F62D00D9AA9C /* RideOn */ = {
 			isa = PBXGroup;
 			children = (
-				4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */,
-				4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */,
-				4B51D56D1D85F62D00D9AA9C /* ViewController.swift */,
-				4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */,
-				4BAD13C41D93067200A73555 /* Location.swift */,
+				4BFB88D81D98436E003D62AE /* Models */,
+				4BFB88D71D984365003D62AE /* ViewControllers */,
 				4B51D56F1D85F62D00D9AA9C /* Main.storyboard */,
 				4BC32C861D92C880001E9753 /* LaunchScreen.storyboard */,
 				4B51D5721D85F62D00D9AA9C /* Assets.xcassets */,
 				4B51D5771D85F62D00D9AA9C /* Info.plist */,
-				8E68DA801D9189A0004C80BD /* CalendarViewController.swift */,
 			);
 			path = RideOn;
 			sourceTree = "<group>";
@@ -152,6 +150,27 @@
 				4B51D58D1D85F62D00D9AA9C /* Info.plist */,
 			);
 			path = RideOnUITests;
+			sourceTree = "<group>";
+		};
+		4BFB88D71D984365003D62AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */,
+				4B51D56D1D85F62D00D9AA9C /* ViewController.swift */,
+				4B51D56B1D85F62D00D9AA9C /* AppDelegate.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		4BFB88D81D98436E003D62AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4BFB88D51D9842F1003D62AE /* DataManager.swift */,
+				4BAD13C41D93067200A73555 /* Location.swift */,
+				4BBE7EC61D945FB100DA4EBC /* SwiftyJSON.swift */,
+				4BFB88D91D984759003D62AE /* Timer.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		A9E9DA12EDE45AC64445D409 /* Pods */ = {
@@ -397,11 +416,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8E68DA811D9189A0004C80BD /* CalendarViewController.swift in Sources */,
 				4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */,
 				4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */,
+				4BFB88D61D9842F1003D62AE /* DataManager.swift in Sources */,
 				4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */,
 				4BBE7EC71D945FB100DA4EBC /* SwiftyJSON.swift in Sources */,
+				4BFB88DA1D984759003D62AE /* Timer.swift in Sources */,
 				4BAD13C51D93067200A73555 /* Location.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

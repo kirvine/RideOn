@@ -13,6 +13,8 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
 
     var userLocation = Location()
     let regionRadius: CLLocationDistance = 1000
+    
+    let dataMan = DataManager()
     var busLat: String? = ""
     var busLon: String? = ""
     
@@ -108,5 +110,15 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 4.0, regionRadius * 4.0)
         mapView.setRegion(coordinateRegion, animated: true)
     }
+    
+    
+    func getRealTimeBusCoordinates(sender: AnyObject) {
+        dataMan.getDirectionDataFromAPIWithSuccess{ (directionsData) -> Void in
+            let json = JSON(data: directionsData)
+            self.busLat = String(json["bustime-response"]["vehicle"][0]["lat"])
+            self.busLon = String(json["bustime-response"]["vehicle"][0]["lon"])
+        }
+    }
+
     
 }
