@@ -12,19 +12,20 @@ import MapKit
 class ViewController: UIViewController, UISearchBarDelegate {
 
     var directionsURL = NSURL(string: "")
+    var busLatitude = ""
+    var busLongitude = ""
     
     @IBOutlet weak var startField: UITextField!
     @IBOutlet weak var endField: UITextField!
     @IBOutlet weak var arrivalField: UITextField!
     @IBOutlet weak var alertField: UITextField!
 
-    @IBAction func sss(sender: AnyObject) {
+    @IBAction func getRealTimeBusCoordinates(sender: AnyObject) {
         formatRequestUrl()
         getDirectionDataFromAPIWithSuccess{ (directionsData) -> Void in
             let json = JSON(data: directionsData)
-            var lon = json["bustime-response"]["vehicle"][0]["lon"]
-            var lat = json["bustime-response"]["vehicle"][0]["lat"]
-            print(lon, lat)
+            self.busLatitude = String(json["bustime-response"]["vehicle"][0]["lat"])
+            self.busLongitude = String(json["bustime-response"]["vehicle"][0]["lon"])
         }
     }
 
@@ -65,7 +66,6 @@ class ViewController: UIViewController, UISearchBarDelegate {
         })
     }
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -75,6 +75,14 @@ class ViewController: UIViewController, UISearchBarDelegate {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let vc = segue.destinationViewController as? BusStatusViewController {
+            vc.busLat = self.busLatitude
+            vc.busLon = self.busLongitude
+        }
+    }
+
     
     
 

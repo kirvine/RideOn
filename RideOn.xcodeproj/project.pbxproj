@@ -20,7 +20,6 @@
 		4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BC32C8B1D92D999001E9753 /* BusStatusViewController.swift */; };
 		8E20BF925146DD0896364689 /* Pods_RideOnUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A05CC86B5A52D0D4677973F /* Pods_RideOnUITests.framework */; };
 		8E68DA811D9189A0004C80BD /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E68DA801D9189A0004C80BD /* CalendarViewController.swift */; };
-		8E68DA831D918F04004C80BD /* DestinationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E68DA821D918F04004C80BD /* DestinationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		592CB6AEBE1220DCE76EFD3A /* Pods-RideOnUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideOnUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RideOnUITests/Pods-RideOnUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7206FF3C07986A0980156B11 /* Pods_RideOn.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideOn.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E68DA801D9189A0004C80BD /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
-		8E68DA821D918F04004C80BD /* DestinationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DestinationViewController.swift; sourceTree = "<group>"; };
 		950D0FD602C5CABD5FD5A75C /* Pods-RideOnTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RideOnTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RideOnTests/Pods-RideOnTests.release.xcconfig"; sourceTree = "<group>"; };
 		9A05CC86B5A52D0D4677973F /* Pods_RideOnUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideOnUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A795871822FACE0FE847F074 /* Pods_RideOnTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RideOnTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,7 +132,6 @@
 				4B51D5721D85F62D00D9AA9C /* Assets.xcassets */,
 				4B51D5771D85F62D00D9AA9C /* Info.plist */,
 				8E68DA801D9189A0004C80BD /* CalendarViewController.swift */,
-				8E68DA821D918F04004C80BD /* DestinationViewController.swift */,
 			);
 			path = RideOn;
 			sourceTree = "<group>";
@@ -404,7 +401,6 @@
 				4BC32C8C1D92D999001E9753 /* BusStatusViewController.swift in Sources */,
 				4B51D56E1D85F62D00D9AA9C /* ViewController.swift in Sources */,
 				4B51D56C1D85F62D00D9AA9C /* AppDelegate.swift in Sources */,
-				8E68DA831D918F04004C80BD /* DestinationViewController.swift in Sources */,
 				4BBE7EC71D945FB100DA4EBC /* SwiftyJSON.swift in Sources */,
 				4BAD13C51D93067200A73555 /* Location.swift in Sources */,
 			);

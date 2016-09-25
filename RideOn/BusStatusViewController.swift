@@ -13,8 +13,13 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
 
     var userLocation = Location()
     let regionRadius: CLLocationDistance = 1000
+    var busLat: String? = ""
+    var busLon: String? = ""
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var leaveTimeLabel: UILabel!
+    @IBOutlet weak var busETALabel: UILabel!
+    @IBOutlet weak var alertTimeLabel: UILabel!
     
     
     override func viewDidAppear(animated: Bool) {
@@ -34,7 +39,7 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
         // get current location
         userLocation.getCurrentLocation()
         let initialLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
-        centerMapOnLocation(initialLocation)
+        //centerMapOnLocation(initialLocation)
         
         // place pins of start and end locations
         let startLocation = CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507)
