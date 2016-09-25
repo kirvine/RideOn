@@ -12,6 +12,11 @@ import MapKit
 class ViewController: UIViewController, UISearchBarDelegate {
 
     var directionsURL = NSURL(string: "")
+
+    struct MyVariables{
+        static var lat = ""
+        static var long = ""
+    }
     
     @IBOutlet weak var startField: UITextField!
     @IBOutlet weak var endField: UITextField!
@@ -22,8 +27,8 @@ class ViewController: UIViewController, UISearchBarDelegate {
         formatRequestUrl()
         getDirectionDataFromAPIWithSuccess{ (directionsData) -> Void in
             let json = JSON(data: directionsData)
-            var lon = json["bustime-response"]["vehicle"][0]["lon"]
-            var lat = json["bustime-response"]["vehicle"][0]["lat"]
+            MyVariables.lon = json["bustime-response"]["vehicle"][0]["lon"]
+            MyVariables.lat = json["bustime-response"]["vehicle"][0]["lat"]
             print(lon, lat)
         }
     }
@@ -80,4 +85,3 @@ class ViewController: UIViewController, UISearchBarDelegate {
 
 
 }
-
