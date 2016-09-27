@@ -28,7 +28,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
     @IBAction func startTimer() {
         timer.startTimer()
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
