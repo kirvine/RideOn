@@ -120,5 +120,8 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
         }
     }
 
+    @IBAction func close() {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
     
 }
