@@ -39,7 +39,7 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
             min = min % 60
         }
         
-        return String(format: "%02d:%02d", hour, min)
+        return String(format: "%d:%02d", hour, min)
     }
     
     override func viewDidLoad() {
