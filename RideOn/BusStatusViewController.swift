@@ -8,11 +8,10 @@
 
 import UIKit
 import MapKit
+import Foundation
 
 class BusStatusViewController: UIViewController, MKMapViewDelegate {
 
-    
-    let regionRadius: CLLocationDistance = 100
     var userLocation = Location()
     
     @IBOutlet weak var mapView: MKMapView!
@@ -20,14 +19,27 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var busETALabel: UILabel!
     @IBOutlet weak var alertTimeLabel: UILabel!
     
-    
-    override func viewDidAppear(animated: Bool) {
+    @IBAction func showAlert(sender: AnyObject) {
+        let arrivalTime = getBusArrivalTime()
         // alert message
-//        let alertController = UIAlertController(title: "RideOn", message: "Your Bus is arriving in 8 minutes at Morewood opp Forbes Ave.", preferredStyle: UIAlertControllerStyle.Alert)
-//        
-//        alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Default,handler: nil))
-//        self.presentViewController(alertController, animated: true, completion: nil)
-
+        let alertController = UIAlertController(title: "RideOn", message: "Leave in 10 min to catch the 69 at \(arrivalTime) pm!", preferredStyle: UIAlertControllerStyle.Alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default,handler: nil))
+        self.presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func getBusArrivalTime() -> String {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        
+        let components = calendar.components([.Hour, .Minute], fromDate: date as NSDate)
+        var hour = Int(components.hour) % 12
+        var min = Int(components.minute) + 16
+        if min/60 > 0 {
+            hour += 1
+            min = min % 60
+        }
+        
+        return String(format: "%02d:%02d", hour, min)
     }
     
     override func viewDidLoad() {
@@ -35,12 +47,12 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
         super.viewDidLoad()
         
         mapView.delegate = self
-        getUserCurrentLocation()
+        userLocation.getCurrentLocation()
 
         // create MapKit objects for start and end locations
-        let startLocation = CLLocationCoordinate2D(latitude: 40.4434658, longitude: -79.9456507)
+        let startLocation = CLLocationCoordinate2D(latitude: 40.444545, longitude: -79.9447229)
         let endLocation = CLLocationCoordinate2D(latitude: 40.444257, longitude: -79.927176)
-        let busLocation = CLLocationCoordinate2D(latitude: 40.42220973968506, longitude: -79.85429872785296)
+        let busLocation = CLLocationCoordinate2D(latitude: 40.439022306411985, longitude: -80.00376238141742)
 
         let startPlacemark = MKPlacemark(coordinate: startLocation, addressDictionary: nil)
         let endPlacemark = MKPlacemark(coordinate: endLocation, addressDictionary: nil)
@@ -54,11 +66,6 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
     
     }
 
-    func getUserCurrentLocation() {
-        userLocation.getCurrentLocation()
-//        let initialLocation = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)
-    }
-    
     func placeAnnotations(pins: [MKPlacemark]) {
         // create annotations
         let startAnnotation = MKPointAnnotation()
@@ -112,12 +119,6 @@ class BusStatusViewController: UIViewController, MKMapViewDelegate {
     
         return renderer
     }
-    
-    func centerMapOnLocation(location: CLLocation) {
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius * 4.0, regionRadius * 4.0)
-        mapView.setRegion(coordinateRegion, animated: true)
-    }
-    
 
     @IBAction func close() {
         dismissViewControllerAnimated(true, completion: nil)

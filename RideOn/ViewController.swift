@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class ViewController: UIViewController, UISearchBarDelegate {
+class ViewController: UIViewController, UISearchBarDelegate, UITextViewDelegate {
     
     @IBOutlet weak var startField: UITextField!
     @IBOutlet weak var endField: UITextField!
@@ -33,7 +33,7 @@ class ViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // from: http://codewithchris.com/uipickerview-example/
-        pickerData = ["5 minutes before", "15 minutes before", "30 minutes before", "1 hour before", "2 hours before", "6 hours before"]
+        pickerData = ["5 min before", "10 min before", "15 min before", "30 min before", "1 hr before", "2 hr before", "6 hr before"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +82,18 @@ class ViewController: UIViewController, UISearchBarDelegate {
         alertPicker.hidden = true
         alertField.text = " " + pickerData[row]
         alertField.hidden = false
+    }
+    
+    //  MARK:   UITextView Delegate Functions
+    
+    func textViewShouldEndEditing(textView: UITextView) -> Bool {
+        textView.resignFirstResponder()
+        return true
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?){
+        view.endEditing(true)
+        super.touchesBegan(touches, withEvent: event)
     }
     
 }
